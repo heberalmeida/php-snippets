@@ -3,7 +3,7 @@
     "displayName": "PHP Snippets VS Code",
     "description": "https://github.com/heberalmeida/php-snippets",
     "icon": "images/php.png",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "heberalmeida",
     "engines": {
         "vscode": "^1.14.0"
