@@ -1,7 +1,7 @@
 {
     "name": "php-snippets",
     "displayName": "PHP Snippets VS Code",
-    "description": "",
+    "description": "https://github.com/heberalmeida/php-snippets",
     "icon": "images/php.png",
     "version": "0.0.1",
     "publisher": "heberalmeida",
