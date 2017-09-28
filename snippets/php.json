@@ -1,0 +1,20 @@
+{
+    "foreach": {
+        "prefix": "pforeach",
+        "body": [
+            "foreach($${1:items} AS $${2:item}):",
+            "\techo $${2:item};",
+            "endforeach;"
+        ],
+        "description": "foreach"
+    },
+    "function": {
+        "prefix": "pfunction",
+        "body": [
+            "function ${1:item}() {",
+            "",
+            "};"
+        ],
+        "description": "function"
+    }
+}

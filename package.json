@@ -1,0 +1,34 @@
+{
+    "name": "php-snippets",
+    "displayName": "PHP Snippets VS Code",
+    "description": "",
+    "icon": "images/php.png",
+    "version": "0.0.1",
+    "publisher": "heberalmeida",
+    "engines": {
+        "vscode": "^1.14.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "PHP",
+        "PHP Snippets"
+    ],
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/php.json"
+            },
+            {
+                "language": "html",
+                "path": "./snippets/php.json"
+            }
+        ]
+    }
+}
