@@ -67,7 +67,7 @@
     "foreach": {
         "prefix": "foreachend",
         "body": [
-            "foreach ($${1:variable} as $${1:key} => $${1:value}):",
+            "foreach ($${1:variable} as $${2:key} => $${3:value}):",
             "",
             "endforeach;"
         ],

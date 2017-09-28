@@ -13,15 +13,15 @@
 | `whileend`    |`while(): endwhile;`           |
 | `dowhile`     |`do while();`                  |
 | `switch`      |`switch`                       |
-| `$G`          |`$_GLOBALS['']`                |
-| `$se`         |`$_SERVER[""]`                 |
-| `$r`          |`$_REQUEST[""]`                |
-| `$p`          |`$_POST[""]`                   |
-| `$g`          |`$_GET[""]`                    |
-| `$f`          |`$_FILES[""]`                  |
-| `$e`          |`$_ENV[""]`                    |
-| `$c`          |`$_COOKIE[""]`                 |
-| `$s`          |`$_SESSION[""]`                |
+| `G`           |`$_GLOBALS['']`                |
+| `se`          |`$_SERVER[""]`                 |
+| `r`           |`$_REQUEST[""]`                |
+| `p`           |`$_POST[""]`                   |
+| `g`           |`$_GET[""]`                    |
+| `f`           |`$_FILES[""]`                  |
+| `e`           |`$_ENV[""]`                    |
+| `c`           |`$_COOKIE[""]`                 |
+| `s`           |`$_SESSION[""]`                |
 | `date`        |`date("",)`                    |
 | `in`          |`include "";`                  |
 | `req`         |`require "";`                  |
