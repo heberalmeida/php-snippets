@@ -13,6 +13,7 @@
 | `whileend`    |`while(): endwhile;`           |
 | `dowhile`     |`do while();`                  |
 | `switch`      |`switch`                       |
+| `try`         |`try/catch`                    |
 | `$G`           |`$_GLOBALS['']`                |
 | `$se`          |`$_SERVER[""]`                 |
 | `$r`           |`$_REQUEST[""]`                |
