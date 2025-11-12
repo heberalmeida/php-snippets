@@ -1,4 +1,4 @@
-# 🧪 Quick Testing Guide
+# Quick Testing Guide
 
 ## Quick Test (5 minutes)
 
@@ -16,7 +16,7 @@ code .
 ### Step 3: Create Test File
 In the new window, create a `test.php` file and test the following snippets:
 
-#### ✅ Basic Test (PHP 5+)
+#### Basic Test (PHP 5+)
 ```
 Type: if
 Expected result: if (condition) { }
@@ -67,7 +67,7 @@ Check each item as you test:
 
 ## Common Problems
 
-### ❌ Snippets don't appear
+### Snippets don't appear
 **Solution:** Make sure:
 - The file has `.php` or `.html` extension
 - You are in the Extension Development Host window (not the main window)

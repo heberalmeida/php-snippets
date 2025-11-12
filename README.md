@@ -2,31 +2,33 @@
 
 A comprehensive PHP snippets extension for Visual Studio Code with support for PHP 5.0 through PHP 8.4.
 
-## 📋 Features
+## Features
 
-- ✅ **Full support**: PHP 5.0 to PHP 8.4
-- ✅ **Modern snippets**: Includes PHP 7 and 8 features (type hints, arrow functions, match expressions, etc.)
-- ✅ **Backward compatibility**: Maintains support for legacy PHP 5 syntax
-- ✅ **Organized by categories**: Easy to find the snippet you need
-- ✅ **Clear documentation**: Each snippet indicates the minimum PHP version required
+- **Full support**: PHP 5.0 to PHP 8.4
+- **234+ snippets**: Comprehensive coverage of PHP functionality
+- **Modern snippets**: Includes PHP 7 and 8 features (type hints, arrow functions, match expressions, readonly classes, property hooks, etc.)
+- **Backward compatibility**: Maintains support for legacy PHP 5 syntax
+- **Organized by categories**: Easy to find the snippet you need
+- **Clear documentation**: Each snippet indicates the minimum PHP version required
+- **Essential functions**: Array, string, file, date/time, error handling, OOP, HTTP, and more
 
-## 🚀 Installation
+## Installation
 
 1. Open VS Code
 2. Go to the Extensions tab (Ctrl+Shift+X / Cmd+Shift+X)
 3. Search for "PHP Snippets VS Code"
 4. Click Install
 
-## 📚 Available Snippets
+## Available Snippets
 
-### 🔧 Constants & Definitions
+### Constants & Definitions
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
 | `def` | `define("CONSTANT_NAME", value);` | 5.0+ |
 | `const` | `const CONSTANT_NAME = value;` | 5.3+ |
 
-### 🔀 Control Structures (Alternative Syntax)
+### Control Structures (Alternative Syntax)
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -44,7 +46,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `switch` | `switch () { case: break; }` | 5.0+ |
 | `match` | `match () { => };` | 8.0+ |
 
-### 🔁 Loops (Alternative Syntax)
+### Loops (Alternative Syntax)
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -61,7 +63,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `while` | `while () {}` | 5.0+ |
 | `dowhile` | `do {} while ();` | 5.0+ |
 
-### 📦 Functions
+### Functions
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -71,7 +73,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `anon` | `$var = function () {};` | 5.3+ |
 | `anont` | `$var = function (): returnType {};` | 7.0+ |
 
-### 🏗️ Classes & OOP
+### Classes & OOP
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -94,7 +96,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `get` | `public function getProperty(): type {}` | 7.0+ |
 | `set` | `public function setProperty(type $property): void {}` | 7.0+ |
 
-### 🌐 Superglobals
+### Superglobals
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -108,7 +110,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `$c` | `$_COOKIE[""]` | 5.0+ |
 | `$s` | `$_SESSION[""]` | 5.0+ |
 
-### 📁 Includes & Requires
+### Includes & Requires
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -117,7 +119,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `req` | `require "";` | 5.0+ |
 | `reqo` | `require_once "";` | 5.0+ |
 
-### 📅 Date & Time
+### Date & Time
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -125,7 +127,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `datetime` | `$date = new DateTime('now');` | 5.2+ |
 | `datef` | `$date->format("Y-m-d H:i:s")` | 5.2+ |
 
-### ⚠️ Error Handling
+### Error Handling
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -133,7 +135,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `tryf` | `try {} catch () {} finally {}` | 5.5+ |
 | `throw` | `throw new Exception("");` | 5.0+ |
 
-### 🎯 Type Declarations (PHP 7+)
+### Type Declarations (PHP 7+)
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -141,7 +143,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `union` | `string\|int` | 8.0+ |
 | `intersection` | `Interface1&Interface2` | 8.1+ |
 
-### 🔧 Other Useful Snippets
+### Other Useful Snippets
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -164,7 +166,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `static` | `static $variable = value;` | 5.0+ |
 | `global` | `global $variable;` | 5.0+ |
 
-### 🆕 PHP 8.2 Features
+### PHP 8.2 Features
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -177,7 +179,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `sensitive` | `#[\\SensitiveParameter] function() {}` | 8.2+ |
 | `dnf` | `(Type1&Type2)\|Type3` | 8.2+ |
 
-### 🆕 PHP 8.3 Features
+### PHP 8.3 Features
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -188,7 +190,7 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `jsonval` | `if (json_validate($json)) {}` | 8.3+ |
 | `mbpad` | `mb_str_pad($string, length, pad, flag, encoding)` | 8.3+ |
 
-### 🆕 PHP 8.4 Features
+### PHP 8.4 Features
 
 | Snippet | Output | PHP Version |
 |---------|--------|-------------|
@@ -198,14 +200,156 @@ A comprehensive PHP snippets extension for Visual Studio Code with support for P
 | `newinit` | `new ClassName(args)` | 8.4+ |
 | `implicitnull` | `?Type` | 8.4+ |
 
-## 💡 How to Use
+### Additional Array Functions
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `apush` | `array_push($array, value);` | 5.0+ |
+| `apop` | `$value = array_pop($array);` | 5.0+ |
+| `aunique` | `$result = array_unique($array);` | 5.0+ |
+| `areverse` | `$result = array_reverse($array);` | 5.0+ |
+| `acolumn` | `$result = array_column($array, "column_key");` | 5.5+ |
+| `achunk` | `$result = array_chunk($array, size);` | 5.0+ |
+| `acombine` | `$result = array_combine($keys, $values);` | 5.0+ |
+| `adiff` | `$result = array_diff($array1, $array2);` | 5.0+ |
+| `aintersect` | `$result = array_intersect($array1, $array2);` | 5.0+ |
+| `asum` | `$sum = array_sum($array);` | 5.0+ |
+
+### Additional String Functions
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `strcontains` | `if (str_contains($haystack, "needle")) {}` | 8.0+ |
+| `strstarts` | `if (str_starts_with($haystack, "needle")) {}` | 8.0+ |
+| `strends` | `if (str_ends_with($haystack, "needle")) {}` | 8.0+ |
+| `strpad` | `str_pad($string, length, pad_string, STR_PAD_RIGHT);` | 5.0+ |
+| `strrepeat` | `str_repeat("string", times);` | 5.0+ |
+| `strsplit` | `$array = str_split($string, length);` | 5.0+ |
+| `striptags` | `strip_tags($string, "allowed_tags");` | 5.0+ |
+| `htmlspecial` | `htmlspecialchars($string, ENT_QUOTES, "UTF-8");` | 5.0+ |
+| `htmlent` | `htmlentities($string, ENT_QUOTES, "UTF-8");` | 5.0+ |
+| `md5` | `md5($string);` | 5.0+ |
+| `sha1` | `sha1($string);` | 5.0+ |
+| `hash` | `hash("sha256", $string);` | 5.1.2+ |
+| `b64enc` | `base64_encode($string);` | 5.0+ |
+| `b64dec` | `base64_decode($string);` | 5.0+ |
+| `urlenc` | `urlencode($string);` | 5.0+ |
+| `urldec` | `urldecode($string);` | 5.0+ |
+
+### Additional File Operations
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `mkdir` | `mkdir("directory", 0755, true);` | 5.0+ |
+| `unlink` | `unlink("filename");` | 5.0+ |
+| `copy` | `copy("source", "destination");` | 5.0+ |
+| `rename` | `rename("oldname", "newname");` | 5.0+ |
+| `moveupload` | `move_uploaded_file($tmp_name, "destination");` | 5.0+ |
+| `pathinfo` | `pathinfo("path");` | 5.0+ |
+| `basename` | `basename("path");` | 5.0+ |
+| `dirname` | `dirname("path");` | 5.0+ |
+| `filesize` | `filesize("filename");` | 5.0+ |
+
+### Additional DateTime Functions
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `datetimei` | `new DateTimeImmutable('now');` | 5.5+ |
+| `strtotime` | `strtotime("time_string");` | 5.0+ |
+| `mktime` | `mktime(hour, minute, second, month, day, year);` | 5.0+ |
+
+### Additional Error Handling
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `errorrep` | `error_reporting(E_ALL);` | 5.0+ |
+| `seterror` | `set_error_handler(function() {});` | 5.0+ |
+| `trigger` | `trigger_error("message", E_USER_ERROR);` | 5.0+ |
+| `errorlog` | `error_log("message", 0);` | 5.0+ |
+| `customex` | `class CustomException extends Exception {}` | 5.0+ |
+
+### Additional OOP Features
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `__clone` | `public function __clone() {}` | 5.0+ |
+| `__sleep` | `public function __sleep(): array {}` | 5.0+ |
+| `__wakeup` | `public function __wakeup() {}` | 5.0+ |
+| `__serialize` | `public function __serialize(): array {}` | 7.4+ |
+| `__unserialize` | `public function __unserialize(array $data): void {}` | 7.4+ |
+| `staticm` | `public static function method(): returnType {}` | 5.0+ |
+| `finalclass` | `final class ClassName {}` | 5.0+ |
+| `finalm` | `final public function method(): returnType {}` | 5.0+ |
+| `instanceof` | `if ($object instanceof ClassName) {}` | 5.0+ |
+| `classexists` | `if (class_exists("ClassName")) {}` | 5.0+ |
+| `methodexists` | `if (method_exists($object, "methodName")) {}` | 5.0+ |
+
+### Autoloading
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `autoload` | `spl_autoload_register(function($class) {});` | 5.1.2+ |
+
+### Callables
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `callfunc` | `call_user_func($callback, args);` | 5.0+ |
+| `callfuncarr` | `call_user_func_array($callback, $args);` | 5.0+ |
+
+### HTTP and Filters
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `filterin` | `filter_input(INPUT_GET, "name", FILTER_SANITIZE_STRING);` | 5.2+ |
+| `filtervar` | `filter_var($variable, FILTER_VALIDATE_EMAIL);` | 5.2+ |
+| `parseurl` | `parse_url("url");` | 5.0+ |
+| `httpquery` | `http_build_query($data);` | 5.0+ |
+
+### Serialization
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `serialize` | `serialize($data);` | 5.0+ |
+| `unserialize` | `unserialize($serialized);` | 5.0+ |
+
+### Variable Functions
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `extract` | `extract($array);` | 5.0+ |
+| `compact` | `compact("var1", "var2");` | 5.0+ |
+| `funcargs` | `func_get_args();` | 5.0+ |
+| `unset` | `unset($variable);` | 5.0+ |
+
+### Math Functions
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `abs` | `abs($number);` | 5.0+ |
+| `min` | `min($value1, $value2);` | 5.0+ |
+| `max` | `max($value1, $value2);` | 5.0+ |
+| `round` | `round($number, precision);` | 5.0+ |
+| `numformat` | `number_format($number, 2, ".", ",");` | 5.0+ |
+
+### Additional Features
+
+| Snippet | Output | PHP Version |
+|---------|--------|-------------|
+| `strict` | `declare(strict_types=1);` | 7.0+ |
+| `yieldfrom` | `yield from generator;` | 7.0+ |
+| `list` | `list($var1, $var2) = $array;` | 5.0+ |
+| `arrdest` | `[$var1, $var2] = $array;` | 7.1+ |
+| `classconst` | `ClassName::CONSTANT_NAME` | 5.0+ |
+
+## How to Use
 
 1. Open a PHP file in VS Code
 2. Type the snippet prefix (e.g., `if`, `class`, `foreach`)
 3. Press `Tab` or `Enter` to expand the snippet
 4. Use `Tab` to navigate between placeholders (${1}, ${2}, etc.)
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### Example 1: Creating a Class with Typed Methods (PHP 7+)
 
@@ -390,7 +534,106 @@ function authenticate(string $password): bool {
 }
 ```
 
-## 🧪 How to Test the Extension
+### Example 13: Additional Array Functions
+
+```php
+<?php
+// Type: apush
+array_push($items, 'new item');
+
+// Type: acolumn
+$names = array_column($users, 'name');
+
+// Type: aunique
+$unique = array_unique($duplicates);
+```
+
+### Example 14: String Functions (PHP 8.0+)
+
+```php
+<?php
+// Type: strcontains
+if (str_contains($text, 'PHP')) {
+    echo 'Found PHP';
+}
+
+// Type: strstarts
+if (str_starts_with($url, 'https://')) {
+    // secure URL
+}
+
+// Type: htmlspecial
+$safe = htmlspecialchars($userInput, ENT_QUOTES, 'UTF-8');
+```
+
+### Example 15: File Operations
+
+```php
+<?php
+// Type: mkdir
+if (!is_dir('uploads')) {
+    mkdir('uploads', 0755, true);
+}
+
+// Type: moveupload
+move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/file.jpg');
+
+// Type: pathinfo
+$info = pathinfo('/path/to/file.php');
+// Returns: ['dirname', 'basename', 'extension', 'filename']
+```
+
+### Example 16: Error Handling
+
+```php
+<?php
+// Type: seterror
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    error_log("Error: $errstr in $errfile on line $errline");
+    return true;
+});
+
+// Type: customex
+class ValidationException extends Exception {
+    public function __construct($message = "", $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+}
+```
+
+### Example 17: OOP Features
+
+```php
+<?php
+// Type: staticm
+class Math {
+    public static function add(int $a, int $b): int {
+        return $a + $b;
+    }
+}
+
+// Type: finalclass
+final class Config {
+    // Cannot be extended
+}
+
+// Type: instanceof
+if ($obj instanceof User) {
+    // $obj is a User instance
+}
+```
+
+### Example 18: Autoloading
+
+```php
+<?php
+// Type: autoload
+spl_autoload_register(function ($class) {
+    require_once __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
+});
+```
+
+## How to Test the Extension
 
 ### Method 1: Test Locally in VS Code
 
@@ -483,11 +726,11 @@ try {
 
 ### Testing Tips
 
-- ✅ Test basic snippets first (if, foreach, class)
-- ✅ Test modern snippets (match, fn, type hints)
-- ✅ Verify placeholders work correctly
-- ✅ Test in `.php` and `.html` files (both are supported)
-- ✅ Verify descriptions appear correctly
+- Test basic snippets first (if, foreach, class)
+- Test modern snippets (match, fn, type hints)
+- Verify placeholders work correctly
+- Test in `.php` and `.html` files (both are supported)
+- Verify descriptions appear correctly
 
 ### Troubleshooting
 
@@ -503,7 +746,7 @@ try {
 - **Solution:** Use Tab to navigate between placeholders
 - Press Esc to exit snippet editing mode
 
-## 🎯 Features by PHP Version
+## Features by PHP Version
 
 ### PHP 5.0 - 5.2
 - Basic control structures
@@ -576,19 +819,38 @@ try {
 - Implicit nullable types
 - Enhanced JIT compiler
 
-## 🤝 Contributing
+## Statistics
+
+- **Total Snippets:** 234+
+- **Categories:** 40+
+- **PHP Version Support:** 5.0 to 8.4
+- **Coverage:**
+  - Control structures: Complete
+  - Loops: Complete
+  - Functions: Complete
+  - Classes & OOP: Complete
+  - Magic methods: Complete
+  - Array functions: 20+ snippets
+  - String functions: 25+ snippets
+  - File operations: 15+ snippets
+  - Database: PDO & MySQLi
+  - Error handling: Complete
+  - HTTP & Filters: Complete
+  - Modern PHP features: PHP 7-8.4
+
+## Contributing
 
 Contributions are welcome! Feel free to open issues or pull requests.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🔗 Links
+## Links
 
 - [GitHub Repository](https://github.com/heberalmeida/php-snippets)
 - [VS Code Marketplace](https://marketplace.visualstudio.com/vscode)
 
 ---
 
-**Made with ❤️ for the PHP community**
+**Made with love for the PHP community**

@@ -1480,5 +1480,668 @@
             "?${1:Type}"
         ],
         "description": "Implicit nullable type (PHP 8.4+)"
+    },
+    
+    "// === Additional Array Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional array functions"
+    },
+    "array-push": {
+        "prefix": "apush",
+        "body": [
+            "array_push($${1:array}, ${2:value});"
+        ],
+        "description": "array_push() function (PHP 5+)"
+    },
+    "array-pop": {
+        "prefix": "apop",
+        "body": [
+            "$${1:value} = array_pop($${2:array});"
+        ],
+        "description": "array_pop() function (PHP 5+)"
+    },
+    "array-unique": {
+        "prefix": "aunique",
+        "body": [
+            "$${1:result} = array_unique($${2:array});"
+        ],
+        "description": "array_unique() function (PHP 5+)"
+    },
+    "array-reverse": {
+        "prefix": "areverse",
+        "body": [
+            "$${1:result} = array_reverse($${2:array});"
+        ],
+        "description": "array_reverse() function (PHP 5+)"
+    },
+    "array-column": {
+        "prefix": "acolumn",
+        "body": [
+            "$${1:result} = array_column($${2:array}, \"${3:column_key}\");"
+        ],
+        "description": "array_column() function (PHP 5.5+)"
+    },
+    "array-chunk": {
+        "prefix": "achunk",
+        "body": [
+            "$${1:result} = array_chunk($${2:array}, ${3:size});"
+        ],
+        "description": "array_chunk() function (PHP 5+)"
+    },
+    "array-combine": {
+        "prefix": "acombine",
+        "body": [
+            "$${1:result} = array_combine($${2:keys}, $${3:values});"
+        ],
+        "description": "array_combine() function (PHP 5+)"
+    },
+    "array-diff": {
+        "prefix": "adiff",
+        "body": [
+            "$${1:result} = array_diff($${2:array1}, $${3:array2});"
+        ],
+        "description": "array_diff() function (PHP 5+)"
+    },
+    "array-intersect": {
+        "prefix": "aintersect",
+        "body": [
+            "$${1:result} = array_intersect($${2:array1}, $${3:array2});"
+        ],
+        "description": "array_intersect() function (PHP 5+)"
+    },
+    "array-sum": {
+        "prefix": "asum",
+        "body": [
+            "$${1:sum} = array_sum($${2:array});"
+        ],
+        "description": "array_sum() function (PHP 5+)"
+    },
+    
+    "// === Additional String Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional string functions"
+    },
+    "str-contains": {
+        "prefix": "strcontains",
+        "body": [
+            "if (str_contains($${1:haystack}, \"${2:needle}\")) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "str_contains() function (PHP 8.0+)"
+    },
+    "str-starts-with": {
+        "prefix": "strstarts",
+        "body": [
+            "if (str_starts_with($${1:haystack}, \"${2:needle}\")) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "str_starts_with() function (PHP 8.0+)"
+    },
+    "str-ends-with": {
+        "prefix": "strends",
+        "body": [
+            "if (str_ends_with($${1:haystack}, \"${2:needle}\")) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "str_ends_with() function (PHP 8.0+)"
+    },
+    "str-pad": {
+        "prefix": "strpad",
+        "body": [
+            "$${1:result} = str_pad($${2:string}, ${3:length}, \"${4:pad_string}\", ${5:STR_PAD_RIGHT});"
+        ],
+        "description": "str_pad() function (PHP 5+)"
+    },
+    "str-repeat": {
+        "prefix": "strrepeat",
+        "body": [
+            "$${1:result} = str_repeat(\"${2:string}\", ${3:times});"
+        ],
+        "description": "str_repeat() function (PHP 5+)"
+    },
+    "str-split": {
+        "prefix": "strsplit",
+        "body": [
+            "$${1:array} = str_split($${2:string}, ${3:length});"
+        ],
+        "description": "str_split() function (PHP 5+)"
+    },
+    "strip-tags": {
+        "prefix": "striptags",
+        "body": [
+            "$${1:result} = strip_tags($${2:string}, \"${3:allowed_tags}\");"
+        ],
+        "description": "strip_tags() function (PHP 5+)"
+    },
+    "htmlspecialchars": {
+        "prefix": "htmlspecial",
+        "body": [
+            "$${1:result} = htmlspecialchars($${2:string}, ${3:ENT_QUOTES}, \"${4:UTF-8}\");"
+        ],
+        "description": "htmlspecialchars() function (PHP 5+)"
+    },
+    "htmlentities": {
+        "prefix": "htmlent",
+        "body": [
+            "$${1:result} = htmlentities($${2:string}, ${3:ENT_QUOTES}, \"${4:UTF-8}\");"
+        ],
+        "description": "htmlentities() function (PHP 5+)"
+    },
+    "md5": {
+        "prefix": "md5",
+        "body": [
+            "$${1:hash} = md5($${2:string});"
+        ],
+        "description": "md5() function (PHP 5+)"
+    },
+    "sha1": {
+        "prefix": "sha1",
+        "body": [
+            "$${1:hash} = sha1($${2:string});"
+        ],
+        "description": "sha1() function (PHP 5+)"
+    },
+    "hash": {
+        "prefix": "hash",
+        "body": [
+            "$${1:hash} = hash(\"${2:sha256}\", $${3:string});"
+        ],
+        "description": "hash() function (PHP 5.1.2+)"
+    },
+    "base64-encode": {
+        "prefix": "b64enc",
+        "body": [
+            "$${1:encoded} = base64_encode($${2:string});"
+        ],
+        "description": "base64_encode() function (PHP 5+)"
+    },
+    "base64-decode": {
+        "prefix": "b64dec",
+        "body": [
+            "$${1:decoded} = base64_decode($${2:string});"
+        ],
+        "description": "base64_decode() function (PHP 5+)"
+    },
+    "urlencode": {
+        "prefix": "urlenc",
+        "body": [
+            "$${1:encoded} = urlencode($${2:string});"
+        ],
+        "description": "urlencode() function (PHP 5+)"
+    },
+    "urldecode": {
+        "prefix": "urldec",
+        "body": [
+            "$${1:decoded} = urldecode($${2:string});"
+        ],
+        "description": "urldecode() function (PHP 5+)"
+    },
+    
+    "// === Additional File Operations ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional file operations"
+    },
+    "mkdir": {
+        "prefix": "mkdir",
+        "body": [
+            "if (!is_dir(\"${1:directory}\")) {",
+            "\tmkdir(\"${1:directory}\", ${2:0755}, true);",
+            "}"
+        ],
+        "description": "mkdir() function (PHP 5+)"
+    },
+    "unlink": {
+        "prefix": "unlink",
+        "body": [
+            "if (file_exists(\"${1:filename}\")) {",
+            "\tunlink(\"${1:filename}\");",
+            "}"
+        ],
+        "description": "unlink() function (PHP 5+)"
+    },
+    "copy": {
+        "prefix": "copy",
+        "body": [
+            "copy(\"${1:source}\", \"${2:destination}\");"
+        ],
+        "description": "copy() function (PHP 5+)"
+    },
+    "rename": {
+        "prefix": "rename",
+        "body": [
+            "rename(\"${1:oldname}\", \"${2:newname}\");"
+        ],
+        "description": "rename() function (PHP 5+)"
+    },
+    "move-uploaded-file": {
+        "prefix": "moveupload",
+        "body": [
+            "move_uploaded_file($${1:tmp_name}, \"${2:destination}\");"
+        ],
+        "description": "move_uploaded_file() function (PHP 5+)"
+    },
+    "pathinfo": {
+        "prefix": "pathinfo",
+        "body": [
+            "$${1:info} = pathinfo(\"${2:path}\");"
+        ],
+        "description": "pathinfo() function (PHP 5+)"
+    },
+    "basename": {
+        "prefix": "basename",
+        "body": [
+            "$${1:name} = basename(\"${2:path}\");"
+        ],
+        "description": "basename() function (PHP 5+)"
+    },
+    "dirname": {
+        "prefix": "dirname",
+        "body": [
+            "$${1:dir} = dirname(\"${2:path}\");"
+        ],
+        "description": "dirname() function (PHP 5+)"
+    },
+    "filesize": {
+        "prefix": "filesize",
+        "body": [
+            "$${1:size} = filesize(\"${2:filename}\");"
+        ],
+        "description": "filesize() function (PHP 5+)"
+    },
+    
+    "// === Additional DateTime Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional DateTime functions"
+    },
+    "datetime-immutable": {
+        "prefix": "datetimei",
+        "body": [
+            "$${1:date} = new DateTimeImmutable(${2:'now'});"
+        ],
+        "description": "DateTimeImmutable object (PHP 5.5+)"
+    },
+    "strtotime": {
+        "prefix": "strtotime",
+        "body": [
+            "$${1:timestamp} = strtotime(\"${2:time_string}\");"
+        ],
+        "description": "strtotime() function (PHP 5+)"
+    },
+    "mktime": {
+        "prefix": "mktime",
+        "body": [
+            "$${1:timestamp} = mktime(${2:hour}, ${3:minute}, ${4:second}, ${5:month}, ${6:day}, ${7:year});"
+        ],
+        "description": "mktime() function (PHP 5+)"
+    },
+    
+    "// === Additional Error Handling ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional error handling"
+    },
+    "error-reporting": {
+        "prefix": "errorrep",
+        "body": [
+            "error_reporting(${1:E_ALL});"
+        ],
+        "description": "error_reporting() function (PHP 5+)"
+    },
+    "set-error-handler": {
+        "prefix": "seterror",
+        "body": [
+            "set_error_handler(function($${1:errno}, $${2:errstr}, $${3:errfile}, $${4:errline}) {",
+            "\t${5:// handle error}",
+            "\treturn true;",
+            "});"
+        ],
+        "description": "set_error_handler() function (PHP 5+)"
+    },
+    "trigger-error": {
+        "prefix": "trigger",
+        "body": [
+            "trigger_error(\"${1:error_message}\", ${2:E_USER_ERROR});"
+        ],
+        "description": "trigger_error() function (PHP 5+)"
+    },
+    "error-log": {
+        "prefix": "errorlog",
+        "body": [
+            "error_log(\"${1:message}\", ${2:0});"
+        ],
+        "description": "error_log() function (PHP 5+)"
+    },
+    "custom-exception": {
+        "prefix": "customex",
+        "body": [
+            "class ${1:CustomException} extends Exception {",
+            "\tpublic function __construct($${2:message} = \"\", $${3:code} = 0, Exception $${4:previous} = null) {",
+            "\t\tparent::__construct($${2:message}, $${3:code}, $${4:previous});",
+            "\t}",
+            "}"
+        ],
+        "description": "Custom exception class (PHP 5+)"
+    },
+    
+    "// === Additional OOP Features ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional OOP features"
+    },
+    "magic-clone": {
+        "prefix": "__clone",
+        "body": [
+            "public function __clone() {",
+            "\t${1:// clone logic}",
+            "}"
+        ],
+        "description": "__clone magic method (PHP 5+)"
+    },
+    "magic-sleep": {
+        "prefix": "__sleep",
+        "body": [
+            "public function __sleep(): array {",
+            "\treturn [${1:'property1'}, ${2:'property2'}];",
+            "}"
+        ],
+        "description": "__sleep magic method (PHP 5+)"
+    },
+    "magic-wakeup": {
+        "prefix": "__wakeup",
+        "body": [
+            "public function __wakeup() {",
+            "\t${1:// wakeup logic}",
+            "}"
+        ],
+        "description": "__wakeup magic method (PHP 5+)"
+    },
+    "magic-serialize": {
+        "prefix": "__serialize",
+        "body": [
+            "public function __serialize(): array {",
+            "\treturn [",
+            "\t\t${1:'property1'} => $this->${1:property1},",
+            "\t\t${2:'property2'} => $this->${2:property2},",
+            "\t];",
+            "}"
+        ],
+        "description": "__serialize magic method (PHP 7.4+)"
+    },
+    "magic-unserialize": {
+        "prefix": "__unserialize",
+        "body": [
+            "public function __unserialize(array $${1:data}): void {",
+            "\t$this->${2:property1} = $${1:data}['${2:property1}'];",
+            "\t$this->${3:property2} = $${1:data}['${3:property2}'];",
+            "}"
+        ],
+        "description": "__unserialize magic method (PHP 7.4+)"
+    },
+    "static-method": {
+        "prefix": "staticm",
+        "body": [
+            "public static function ${1:methodName}(${2:parameters}): ${3:returnType} {",
+            "\t${4:// code}",
+            "\treturn ${5:value};",
+            "}"
+        ],
+        "description": "Static method (PHP 5+)"
+    },
+    "final-class": {
+        "prefix": "finalclass",
+        "body": [
+            "final class ${1:ClassName} {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "Final class (PHP 5+)"
+    },
+    "final-method": {
+        "prefix": "finalm",
+        "body": [
+            "final public function ${1:methodName}(${2:parameters}): ${3:returnType} {",
+            "\t${4:// code}",
+            "}"
+        ],
+        "description": "Final method (PHP 5+)"
+    },
+    "instanceof": {
+        "prefix": "instanceof",
+        "body": [
+            "if ($${1:object} instanceof ${2:ClassName}) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "instanceof operator (PHP 5+)"
+    },
+    "class-exists": {
+        "prefix": "classexists",
+        "body": [
+            "if (class_exists(\"${1:ClassName}\")) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "class_exists() function (PHP 5+)"
+    },
+    "method-exists": {
+        "prefix": "methodexists",
+        "body": [
+            "if (method_exists($${1:object}, \"${2:methodName}\")) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "method_exists() function (PHP 5+)"
+    },
+    
+    "// === Autoloading ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Autoloading"
+    },
+    "spl-autoload-register": {
+        "prefix": "autoload",
+        "body": [
+            "spl_autoload_register(function ($${1:class}) {",
+            "\trequire_once \"${2:path}/\" . str_replace('\\\\', '/', $${1:class}) . \".php\";",
+            "});"
+        ],
+        "description": "spl_autoload_register() function (PHP 5.1.2+)"
+    },
+    
+    "// === Callables ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Callables"
+    },
+    "call-user-func": {
+        "prefix": "callfunc",
+        "body": [
+            "$${1:result} = call_user_func($${2:callback}, ${3:args});"
+        ],
+        "description": "call_user_func() function (PHP 5+)"
+    },
+    "call-user-func-array": {
+        "prefix": "callfuncarr",
+        "body": [
+            "$${1:result} = call_user_func_array($${2:callback}, $${3:args});"
+        ],
+        "description": "call_user_func_array() function (PHP 5+)"
+    },
+    
+    "// === HTTP and Filters ===": {
+        "prefix": "",
+        "body": [],
+        "description": "HTTP and filters"
+    },
+    "filter-input": {
+        "prefix": "filterin",
+        "body": [
+            "$${1:value} = filter_input(${2:INPUT_GET}, \"${3:name}\", ${4:FILTER_SANITIZE_STRING});"
+        ],
+        "description": "filter_input() function (PHP 5.2+)"
+    },
+    "filter-var": {
+        "prefix": "filtervar",
+        "body": [
+            "$${1:filtered} = filter_var($${2:variable}, ${3:FILTER_VALIDATE_EMAIL});"
+        ],
+        "description": "filter_var() function (PHP 5.2+)"
+    },
+    "parse-url": {
+        "prefix": "parseurl",
+        "body": [
+            "$${1:parsed} = parse_url(\"${2:url}\");"
+        ],
+        "description": "parse_url() function (PHP 5+)"
+    },
+    "http-build-query": {
+        "prefix": "httpquery",
+        "body": [
+            "$${1:query} = http_build_query($${2:data});"
+        ],
+        "description": "http_build_query() function (PHP 5+)"
+    },
+    
+    "// === Serialization ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Serialization"
+    },
+    "serialize": {
+        "prefix": "serialize",
+        "body": [
+            "$${1:serialized} = serialize($${2:data});"
+        ],
+        "description": "serialize() function (PHP 5+)"
+    },
+    "unserialize": {
+        "prefix": "unserialize",
+        "body": [
+            "$${1:data} = unserialize($${2:serialized});"
+        ],
+        "description": "unserialize() function (PHP 5+)"
+    },
+    
+    "// === Variable Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Variable functions"
+    },
+    "extract": {
+        "prefix": "extract",
+        "body": [
+            "extract($${1:array});"
+        ],
+        "description": "extract() function (PHP 5+)"
+    },
+    "compact": {
+        "prefix": "compact",
+        "body": [
+            "$${1:array} = compact(\"${2:var1}\", \"${3:var2}\");"
+        ],
+        "description": "compact() function (PHP 5+)"
+    },
+    "func-get-args": {
+        "prefix": "funcargs",
+        "body": [
+            "$${1:args} = func_get_args();"
+        ],
+        "description": "func_get_args() function (PHP 5+)"
+    },
+    "unset": {
+        "prefix": "unset",
+        "body": [
+            "unset($${1:variable});"
+        ],
+        "description": "unset() function (PHP 5+)"
+    },
+    
+    "// === Math Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Math functions"
+    },
+    "abs": {
+        "prefix": "abs",
+        "body": [
+            "$${1:result} = abs($${2:number});"
+        ],
+        "description": "abs() function (PHP 5+)"
+    },
+    "min": {
+        "prefix": "min",
+        "body": [
+            "$${1:min} = min($${2:value1}, $${3:value2});"
+        ],
+        "description": "min() function (PHP 5+)"
+    },
+    "max": {
+        "prefix": "max",
+        "body": [
+            "$${1:max} = max($${2:value1}, $${3:value2});"
+        ],
+        "description": "max() function (PHP 5+)"
+    },
+    "round": {
+        "prefix": "round",
+        "body": [
+            "$${1:result} = round($${2:number}, ${3:precision});"
+        ],
+        "description": "round() function (PHP 5+)"
+    },
+    "number-format": {
+        "prefix": "numformat",
+        "body": [
+            "$${1:formatted} = number_format($${2:number}, ${3:2}, \"${4:.\", \"${5:,}\");"
+        ],
+        "description": "number_format() function (PHP 5+)"
+    },
+    
+    "// === Additional Features ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Additional features"
+    },
+    "declare-strict": {
+        "prefix": "strict",
+        "body": [
+            "declare(strict_types=1);"
+        ],
+        "description": "declare(strict_types=1) (PHP 7.0+)"
+    },
+    "yield-from": {
+        "prefix": "yieldfrom",
+        "body": [
+            "yield from ${1:generator};"
+        ],
+        "description": "yield from (PHP 7.0+)"
+    },
+    "list-destructuring": {
+        "prefix": "list",
+        "body": [
+            "list($${1:var1}, $${2:var2}) = $${3:array};"
+        ],
+        "description": "list() destructuring (PHP 5+)"
+    },
+    "array-destructuring": {
+        "prefix": "arrdest",
+        "body": [
+            "[$${1:var1}, $${2:var2}] = $${3:array};"
+        ],
+        "description": "Array destructuring (PHP 7.1+)"
+    },
+    "class-constant": {
+        "prefix": "classconst",
+        "body": [
+            "$${1:ClassName}::${2:CONSTANT_NAME}"
+        ],
+        "description": "Class constant access (PHP 5+)"
     }
 }
