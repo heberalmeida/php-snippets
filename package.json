@@ -1,20 +1,32 @@
 {
     "name": "php-snippets",
     "displayName": "PHP Snippets VS Code",
-    "description": "https://github.com/heberalmeida/php-snippets",
+    "description": "Comprehensive PHP snippets for VS Code with support for PHP 5.0 to PHP 8.4. Includes modern features like type hints, arrow functions, match expressions, readonly classes, property hooks, and more.",
     "icon": "images/php.png",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "publisher": "heberalmeida",
     "engines": {
         "vscode": "^1.14.0"
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/heberalmeida/php-snippets"
     },
     "keywords": [
         "PHP",
-        "PHP Snippets"
+        "PHP Snippets",
+        "PHP5",
+        "PHP7",
+        "PHP8",
+        "PHP8.2",
+        "PHP8.3",
+        "PHP8.4",
+        "Snippets",
+        "Code Snippets",
+        "Productivity",
+        "Readonly Classes",
+        "Property Hooks",
+        "Override Attribute"
     ],
     "categories": [
         "Snippets"
@@ -30,5 +42,10 @@
                 "path": "./snippets/php.json"
             }
         ]
-    }
+    },
+    "homepage": "https://github.com/heberalmeida/php-snippets",
+    "bugs": {
+        "url": "https://github.com/heberalmeida/php-snippets/issues"
+    },
+    "license": "MIT"
 }

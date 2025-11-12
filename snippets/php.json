@@ -1,211 +1,1484 @@
 {
+    "// PHP 5-8 Compatible Snippets": {
+        "prefix": "",
+        "body": [],
+        "description": "PHP Snippets - Compatible with PHP 5.0 to PHP 8.x"
+    },
+    
+    "// === Constants & Definitions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Constants"
+    },
     "define": {
         "prefix": "def",
         "body": [
-            "define(\"${1:value}\", \"${2:value}\");"
+            "define(\"${1:CONSTANT_NAME}\", ${2:value});"
         ],
-        "description": "define"
+        "description": "Define constant (PHP 5+)"
+    },
+    "const": {
+        "prefix": "const",
+        "body": [
+            "const ${1:CONSTANT_NAME} = ${2:value};"
+        ],
+        "description": "Class constant (PHP 5.3+)"
+    },
+    
+    "// === Control Structures (Alternative Syntax) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Alternative syntax"
     },
     "ifend": {
         "prefix": "ifend",
         "body": [
-            "if (${1:cond}):",
+            "if (${1:condition}):",
+            "\t${2:// code}",
             "endif;"
         ],
-        "description": "ifend"
+        "description": "if with alternative syntax (PHP 5+)"
     },
     "ifelseend": {
         "prefix": "ifelseend",
         "body": [
-            "if (${1:cond}):",
+            "if (${1:condition}):",
+            "\t${2:// code}",
             "else:",
+            "\t${3:// code}",
             "endif;"
         ],
-        "description": "ifelseend"
+        "description": "if-else with alternative syntax (PHP 5+)"
     },
     "ifelseifend": {
         "prefix": "ifelseifend",
         "body": [
-            "if (${1:cond}):",
-            "elseif (${2:cond}):",
+            "if (${1:condition}):",
+            "\t${2:// code}",
+            "elseif (${3:condition}):",
+            "\t${4:// code}",
             "else:",
+            "\t${5:// code}",
             "endif;"
         ],
-        "description": "ifelseifend"
+        "description": "if-elseif-else with alternative syntax (PHP 5+)"
+    },
+    
+    "// === Control Structures (Standard Syntax) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Standard syntax"
     },
     "if": {
         "prefix": "if",
         "body": [
-            "if (${1:cond}) {",
-            "",
+            "if (${1:condition}) {",
+            "\t${2:// code}",
             "}"
         ],
-        "description": "if"
+        "description": "if statement (PHP 5+)"
     },
     "ifelse": {
         "prefix": "ifelse",
         "body": [
-            "if (${1:cond}) {",
+            "if (${1:condition}) {",
+            "\t${2:// code}",
             "} else {",
-            "",
+            "\t${3:// code}",
             "}"
         ],
-        "description": "ifelse"
+        "description": "if-else statement (PHP 5+)"
     },
     "ifelseif": {
         "prefix": "ifelseif",
         "body": [
-            "if (${1:cond}) {",
-            "} elseif(${2:cond}) {",
-            "",
+            "if (${1:condition}) {",
+            "\t${2:// code}",
+            "} elseif (${3:condition}) {",
+            "\t${4:// code}",
             "} else {",
-            "",
+            "\t${5:// code}",
             "}"
         ],
-        "description": "ifelseif"
+        "description": "if-elseif-else statement (PHP 5+)"
     },
-    "foreach": {
+    "switch": {
+        "prefix": "switch",
+        "body": [
+            "switch (${1:variable}) {",
+            "\tcase ${2:value}:",
+            "\t\t${3:// code}",
+            "\t\tbreak;",
+            "\tcase ${4:value}:",
+            "\t\t${5:// code}",
+            "\t\tbreak;",
+            "\tdefault:",
+            "\t\t${6:// code}",
+            "\t\tbreak;",
+            "}"
+        ],
+        "description": "switch statement (PHP 5+)"
+    },
+    "match": {
+        "prefix": "match",
+        "body": [
+            "match (${1:expression}) {",
+            "\t${2:value} => ${3:result},",
+            "\t${4:value} => ${5:result},",
+            "\tdefault => ${6:result},",
+            "};"
+        ],
+        "description": "match expression (PHP 8.0+)"
+    },
+    
+    "// === Loops (Alternative Syntax) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Loops alternative syntax"
+    },
+    "foreachend": {
         "prefix": "foreachend",
         "body": [
-            "foreach ($${1:variable} as $${2:key} => $${3:value}):",
-            "",
+            "foreach ($${1:array} as $${2:key} => $${3:value}):",
+            "\t${4:// code}",
             "endforeach;"
         ],
-        "description": "foreach"
+        "description": "foreach with alternative syntax (PHP 5+)"
     },
-    "for": {
+    "forend": {
         "prefix": "forend",
         "body": [
-            "for ($${1:i}=0; $${1:i} < ; $${1:i}++):",
-            "\t",
+            "for ($${1:i} = ${2:0}; $${1:i} < ${3:count}; $${1:i}++):",
+            "\t${4:// code}",
             "endfor;"
         ],
-        "description": "for"
+        "description": "for with alternative syntax (PHP 5+)"
     },
-    "while": {
+    "whileend": {
         "prefix": "whileend",
         "body": [
-            "while ($${1:variable} <= 10):",
-            "\t",
+            "while (${1:condition}):",
+            "\t${2:// code}",
             "endwhile;"
         ],
-        "description": "while"
+        "description": "while with alternative syntax (PHP 5+)"
+    },
+    
+    "// === Loops (Standard Syntax) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Loops standard syntax"
+    },
+    "foreach": {
+        "prefix": "foreach",
+        "body": [
+            "foreach ($${1:array} as $${2:key} => $${3:value}) {",
+            "\t${4:// code}",
+            "}"
+        ],
+        "description": "foreach loop (PHP 5+)"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for ($${1:i} = ${2:0}; $${1:i} < ${3:count}; $${1:i}++) {",
+            "\t${4:// code}",
+            "}"
+        ],
+        "description": "for loop (PHP 5+)"
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "while (${1:condition}) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "while loop (PHP 5+)"
     },
     "dowhile": {
         "prefix": "dowhile",
         "body": [
             "do {",
-            "\t",
-            "} while ($${1:variable} <= 10);"
+            "\t${1:// code}",
+            "} while (${2:condition});"
         ],
-        "description": "dowhile"
+        "description": "do-while loop (PHP 5+)"
     },
-    "switch": {
-        "prefix": "switch",
+    
+    "// === Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Functions"
+    },
+    "function": {
+        "prefix": "function",
         "body": [
-            "switch ($${1:cond}) {",
-            "\tcase ${2:label}:",
-            "\t\tbreak;",
-            "\tcase ${3:label}:",
-            "\t\tbreak;",
-            "\tcase ${4:label}:",
-            "\t\tbreak;",
-            "\tdefault:",
+            "function ${1:functionName}(${2:parameters}) {",
+            "\t${3:// code}",
             "}"
         ],
-        "description": "switch"
+        "description": "Function (PHP 5+)"
+    },
+    "function-typed": {
+        "prefix": "funct",
+        "body": [
+            "function ${1:functionName}(${2:parameters}): ${3:returnType} {",
+            "\t${4:// code}",
+            "\treturn ${5:value};",
+            "}"
+        ],
+        "description": "Function with return type (PHP 7.0+)"
+    },
+    "arrow-function": {
+        "prefix": "fn",
+        "body": [
+            "fn(${1:parameters}) => ${2:expression}"
+        ],
+        "description": "Arrow function (PHP 7.4+)"
+    },
+    "anonymous-function": {
+        "prefix": "anon",
+        "body": [
+            "$${1:variable} = function (${2:parameters}) {",
+            "\t${3:// code}",
+            "};"
+        ],
+        "description": "Anonymous function (PHP 5.3+)"
+    },
+    "anonymous-function-typed": {
+        "prefix": "anont",
+        "body": [
+            "$${1:variable} = function (${2:parameters}): ${3:returnType} {",
+            "\t${4:// code}",
+            "\treturn ${5:value};",
+            "};"
+        ],
+        "description": "Anonymous function with return type (PHP 7.0+)"
+    },
+    
+    "// === Classes & OOP ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Object-Oriented Programming"
+    },
+    "class": {
+        "prefix": "class",
+        "body": [
+            "class ${1:ClassName} {",
+            "\t${2:// properties and methods}",
+            "}"
+        ],
+        "description": "Class (PHP 5+)"
+    },
+    "class-extends": {
+        "prefix": "classext",
+        "body": [
+            "class ${1:ClassName} extends ${2:ParentClass} {",
+            "\t${3:// properties and methods}",
+            "}"
+        ],
+        "description": "Class extending another (PHP 5+)"
+    },
+    "class-implements": {
+        "prefix": "classimp",
+        "body": [
+            "class ${1:ClassName} implements ${2:InterfaceName} {",
+            "\t${3:// properties and methods}",
+            "}"
+        ],
+        "description": "Class implementing interface (PHP 5+)"
+    },
+    "class-full": {
+        "prefix": "classfull",
+        "body": [
+            "class ${1:ClassName} extends ${2:ParentClass} implements ${3:InterfaceName} {",
+            "\t${4:// properties and methods}",
+            "}"
+        ],
+        "description": "Class with extends and implements (PHP 5+)"
+    },
+    "interface": {
+        "prefix": "interface",
+        "body": [
+            "interface ${1:InterfaceName} {",
+            "\t${2:// method signatures}",
+            "}"
+        ],
+        "description": "Interface (PHP 5+)"
+    },
+    "trait": {
+        "prefix": "trait",
+        "body": [
+            "trait ${1:TraitName} {",
+            "\t${2:// methods and properties}",
+            "}"
+        ],
+        "description": "Trait (PHP 5.4+)"
+    },
+    "abstract-class": {
+        "prefix": "abstract",
+        "body": [
+            "abstract class ${1:ClassName} {",
+            "\t${2:// abstract and concrete methods}",
+            "}"
+        ],
+        "description": "Abstract class (PHP 5+)"
+    },
+    "namespace": {
+        "prefix": "namespace",
+        "body": [
+            "namespace ${1:NamespaceName};"
+        ],
+        "description": "Namespace declaration (PHP 5.3+)"
+    },
+    "use": {
+        "prefix": "use",
+        "body": [
+            "use ${1:ClassName};"
+        ],
+        "description": "Use statement (PHP 5.3+)"
+    },
+    "use-as": {
+        "prefix": "useas",
+        "body": [
+            "use ${1:ClassName} as ${2:Alias};"
+        ],
+        "description": "Use with alias (PHP 5.3+)"
+    },
+    "constructor": {
+        "prefix": "construct",
+        "body": [
+            "public function __construct(${1:parameters}) {",
+            "\t${2:// initialization code}",
+            "}"
+        ],
+        "description": "Constructor (PHP 5+)"
+    },
+    "destructor": {
+        "prefix": "destruct",
+        "body": [
+            "public function __destruct() {",
+            "\t${1:// cleanup code}",
+            "}"
+        ],
+        "description": "Destructor (PHP 5+)"
+    },
+    "method": {
+        "prefix": "method",
+        "body": [
+            "${1:public} function ${2:methodName}(${3:parameters}) {",
+            "\t${4:// code}",
+            "}"
+        ],
+        "description": "Class method (PHP 5+)"
+    },
+    "method-typed": {
+        "prefix": "methodt",
+        "body": [
+            "${1:public} function ${2:methodName}(${3:parameters}): ${4:returnType} {",
+            "\t${5:// code}",
+            "\treturn ${6:value};",
+            "}"
+        ],
+        "description": "Class method with return type (PHP 7.0+)"
+    },
+    "property": {
+        "prefix": "prop",
+        "body": [
+            "${1:public} $${2:propertyName};"
+        ],
+        "description": "Class property (PHP 5+)"
+    },
+    "property-typed": {
+        "prefix": "propt",
+        "body": [
+            "${1:public} ${2:type} $${3:propertyName};"
+        ],
+        "description": "Typed class property (PHP 7.4+)"
+    },
+    "getter": {
+        "prefix": "get",
+        "body": [
+            "public function get${1:PropertyName}(): ${2:type} {",
+            "\treturn $this->${3:propertyName};",
+            "}"
+        ],
+        "description": "Getter method (PHP 7.0+)"
+    },
+    "setter": {
+        "prefix": "set",
+        "body": [
+            "public function set${1:PropertyName}(${2:type} $${3:propertyName}): void {",
+            "\t$this->${3:propertyName} = $${3:propertyName};",
+            "}"
+        ],
+        "description": "Setter method (PHP 7.0+)"
+    },
+    
+    "// === Superglobals ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Superglobal variables"
     },
     "globals": {
         "prefix": "$G",
         "body": [
             "$GLOBALS[\"${1:name}\"]"
         ],
-        "description": "globals"
+        "description": "$GLOBALS superglobal (PHP 5+)"
     },
     "server": {
         "prefix": "$se",
         "body": [
             "$_SERVER[\"${1:name}\"]"
         ],
-        "description": "server"
+        "description": "$_SERVER superglobal (PHP 5+)"
     },
     "request": {
         "prefix": "$r",
         "body": [
             "$_REQUEST[\"${1:name}\"]"
         ],
-        "description": "request"
+        "description": "$_REQUEST superglobal (PHP 5+)"
     },
     "post": {
         "prefix": "$p",
         "body": [
-            "$$_POST[\"${1:name}\"]"
+            "$_POST[\"${1:name}\"]"
         ],
-        "description": "post"
+        "description": "$_POST superglobal (PHP 5+)"
     },
     "get": {
         "prefix": "$g",
         "body": [
-            "$$_GET[\"${1:name}\"]"
+            "$_GET[\"${1:name}\"]"
         ],
-        "description": "get"
+        "description": "$_GET superglobal (PHP 5+)"
     },
     "files": {
         "prefix": "$f",
         "body": [
-            "$$_FILES[\"${1:name}\"]"
+            "$_FILES[\"${1:name}\"]"
         ],
-        "description": "files"
+        "description": "$_FILES superglobal (PHP 5+)"
     },
     "env": {
         "prefix": "$e",
         "body": [
-            "$$_ENV[\"${1:name}\"]"
+            "$_ENV[\"${1:name}\"]"
         ],
-        "description": "env"
+        "description": "$_ENV superglobal (PHP 5+)"
     },
     "cookie": {
         "prefix": "$c",
         "body": [
-            "$$_COOKIE[\"${1:name}\"]"
+            "$_COOKIE[\"${1:name}\"]"
         ],
-        "description": "cookie"
+        "description": "$_COOKIE superglobal (PHP 5+)"
     },
     "session": {
         "prefix": "$s",
         "body": [
-            "$$_SESSION[\"${1:name}\"]"
+            "$_SESSION[\"${1:name}\"]"
         ],
-        "description": "session"
+        "description": "$_SESSION superglobal (PHP 5+)"
     },
-    "date": {
-        "prefix": "date",
-        "body": [
-            "date(\"${1:format}\",${2:timestamp})"
-        ],
-        "description": "date"
+    
+    "// === Includes & Requires ===": {
+        "prefix": "",
+        "body": [],
+        "description": "File includes"
     },
     "include": {
         "prefix": "in",
         "body": [
             "include \"${1:filename}\";"
         ],
-        "description": "include"
+        "description": "include statement (PHP 5+)"
+    },
+    "include_once": {
+        "prefix": "ino",
+        "body": [
+            "include_once \"${1:filename}\";"
+        ],
+        "description": "include_once statement (PHP 5+)"
     },
     "require": {
         "prefix": "req",
         "body": [
             "require \"${1:filename}\";"
         ],
-        "description": "require"
+        "description": "require statement (PHP 5+)"
     },
-    "function": {
-        "prefix": "function",
+    "require_once": {
+        "prefix": "reqo",
         "body": [
-            "function ${1:item}() {",
-            "",
+            "require_once \"${1:filename}\";"
+        ],
+        "description": "require_once statement (PHP 5+)"
+    },
+    
+    "// === Date & Time ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Date and time functions"
+    },
+    "date": {
+        "prefix": "date",
+        "body": [
+            "date(\"${1:Y-m-d H:i:s}\", ${2:time()})"
+        ],
+        "description": "date() function (PHP 5+)"
+    },
+    "datetime": {
+        "prefix": "datetime",
+        "body": [
+            "$${1:date} = new DateTime(${2:'now'});"
+        ],
+        "description": "DateTime object (PHP 5.2+)"
+    },
+    "datetime-format": {
+        "prefix": "datef",
+        "body": [
+            "$${1:date}->format(\"${2:Y-m-d H:i:s}\")"
+        ],
+        "description": "DateTime format (PHP 5.2+)"
+    },
+    
+    "// === Error Handling ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Error handling"
+    },
+    "try-catch": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t${1:// code}",
+            "} catch (${2:Exception} $${3:e}) {",
+            "\t${4:// handle exception}",
             "}"
         ],
-        "description": "function"
+        "description": "try-catch block (PHP 5+)"
+    },
+    "try-catch-finally": {
+        "prefix": "tryf",
+        "body": [
+            "try {",
+            "\t${1:// code}",
+            "} catch (${2:Exception} $${3:e}) {",
+            "\t${4:// handle exception}",
+            "} finally {",
+            "\t${5:// cleanup code}",
+            "}"
+        ],
+        "description": "try-catch-finally block (PHP 5.5+)"
+    },
+    "throw": {
+        "prefix": "throw",
+        "body": [
+            "throw new ${1:Exception}(\"${2:message}\");"
+        ],
+        "description": "throw exception (PHP 5+)"
+    },
+    
+    "// === Type Declarations (PHP 7+) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Type declarations"
+    },
+    "nullable-type": {
+        "prefix": "nullable",
+        "body": [
+            "?${1:string}"
+        ],
+        "description": "Nullable type (PHP 7.1+)"
+    },
+    "union-type": {
+        "prefix": "union",
+        "body": [
+            "${1:string}|${2:int}"
+        ],
+        "description": "Union type (PHP 8.0+)"
+    },
+    "intersection-type": {
+        "prefix": "intersection",
+        "body": [
+            "${1:Interface1}&${2:Interface2}"
+        ],
+        "description": "Intersection type (PHP 8.1+)"
+    },
+    
+    "// === Other Useful Snippets ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Other snippets"
+    },
+    "echo": {
+        "prefix": "echo",
+        "body": [
+            "echo \"${1:text}\";"
+        ],
+        "description": "echo statement (PHP 5+)"
+    },
+    "print": {
+        "prefix": "print",
+        "body": [
+            "print \"${1:text}\";"
+        ],
+        "description": "print statement (PHP 5+)"
+    },
+    "var-dump": {
+        "prefix": "vd",
+        "body": [
+            "var_dump($${1:variable});"
+        ],
+        "description": "var_dump() for debugging (PHP 5+)"
+    },
+    "print-r": {
+        "prefix": "pr",
+        "body": [
+            "print_r($${1:variable});"
+        ],
+        "description": "print_r() for debugging (PHP 5+)"
+    },
+    "die": {
+        "prefix": "die",
+        "body": [
+            "die(\"${1:message}\");"
+        ],
+        "description": "die() statement (PHP 5+)"
+    },
+    "exit": {
+        "prefix": "exit",
+        "body": [
+            "exit(${1:status});"
+        ],
+        "description": "exit() statement (PHP 5+)"
+    },
+    "return": {
+        "prefix": "return",
+        "body": [
+            "return ${1:value};"
+        ],
+        "description": "return statement (PHP 5+)"
+    },
+    "array": {
+        "prefix": "array",
+        "body": [
+            "array(${1:element1}, ${2:element2})"
+        ],
+        "description": "Array (PHP 5+)"
+    },
+    "array-short": {
+        "prefix": "arr",
+        "body": [
+            "[${1:element1}, ${2:element2}]"
+        ],
+        "description": "Short array syntax (PHP 5.4+)"
+    },
+    "array-assoc": {
+        "prefix": "arra",
+        "body": [
+            "array(\"${1:key}\" => ${2:value})"
+        ],
+        "description": "Associative array (PHP 5+)"
+    },
+    "array-assoc-short": {
+        "prefix": "arrs",
+        "body": [
+            "[\"${1:key}\" => ${2:value}]"
+        ],
+        "description": "Short associative array (PHP 5.4+)"
+    },
+    "isset": {
+        "prefix": "isset",
+        "body": [
+            "isset($${1:variable})"
+        ],
+        "description": "isset() check (PHP 5+)"
+    },
+    "empty": {
+        "prefix": "empty",
+        "body": [
+            "empty($${1:variable})"
+        ],
+        "description": "empty() check (PHP 5+)"
+    },
+    "null-coalescing": {
+        "prefix": "??",
+        "body": [
+            "$${1:variable} ?? ${2:default}"
+        ],
+        "description": "Null coalescing operator (PHP 7.0+)"
+    },
+    "null-coalescing-assign": {
+        "prefix": "??=",
+        "body": [
+            "$${1:variable} ??= ${2:default}"
+        ],
+        "description": "Null coalescing assignment (PHP 7.4+)"
+    },
+    "spaceship": {
+        "prefix": "<=>",
+        "body": [
+            "${1:value1} <=> ${2:value2}"
+        ],
+        "description": "Spaceship operator (PHP 7.0+)"
+    },
+    "static": {
+        "prefix": "static",
+        "body": [
+            "static $${1:variable} = ${2:value};"
+        ],
+        "description": "Static variable (PHP 5+)"
+    },
+    "global": {
+        "prefix": "global",
+        "body": [
+            "global $${1:variable};"
+        ],
+        "description": "Global variable (PHP 5+)"
+    },
+    
+    "// === Magic Methods ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Magic methods"
+    },
+    "magic-get": {
+        "prefix": "__get",
+        "body": [
+            "public function __get($${1:name}) {",
+            "\treturn $this->${2:property};",
+            "}"
+        ],
+        "description": "__get magic method (PHP 5+)"
+    },
+    "magic-set": {
+        "prefix": "__set",
+        "body": [
+            "public function __set($${1:name}, $${2:value}) {",
+            "\t$this->${1:name} = $${2:value};",
+            "}"
+        ],
+        "description": "__set magic method (PHP 5+)"
+    },
+    "magic-tostring": {
+        "prefix": "__toString",
+        "body": [
+            "public function __toString(): string {",
+            "\treturn \"${1:string representation}\";",
+            "}"
+        ],
+        "description": "__toString magic method (PHP 5+)"
+    },
+    "magic-call": {
+        "prefix": "__call",
+        "body": [
+            "public function __call($${1:name}, $${2:arguments}) {",
+            "\t${3:// handle method call}",
+            "}"
+        ],
+        "description": "__call magic method (PHP 5+)"
+    },
+    "magic-invoke": {
+        "prefix": "__invoke",
+        "body": [
+            "public function __invoke($${1:arguments}) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "__invoke magic method (PHP 5.3+)"
+    },
+    
+    "// === Enums (PHP 8.1+) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Enums"
+    },
+    "enum": {
+        "prefix": "enum",
+        "body": [
+            "enum ${1:EnumName} {",
+            "\tcase ${2:VALUE};",
+            "}"
+        ],
+        "description": "Enum (PHP 8.1+)"
+    },
+    "enum-backed": {
+        "prefix": "enumb",
+        "body": [
+            "enum ${1:EnumName}: ${2:string} {",
+            "\tcase ${3:VALUE} = ${4:'value'};",
+            "}"
+        ],
+        "description": "Backed enum (PHP 8.1+)"
+    },
+    
+    "// === Database (PDO) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "PDO database operations"
+    },
+    "pdo-connect": {
+        "prefix": "pdo",
+        "body": [
+            "$${1:pdo} = new PDO(",
+            "\t\"${2:mysql}:host=${3:localhost};dbname=${4:database}\",",
+            "\t\"${5:username}\",",
+            "\t\"${6:password}\"",
+            ");"
+        ],
+        "description": "PDO connection (PHP 5.1+)"
+    },
+    "pdo-prepare": {
+        "prefix": "pdop",
+        "body": [
+            "$${1:stmt} = $${2:pdo}->prepare(\"${3:SELECT * FROM table WHERE id = :id}\");",
+            "$${1:stmt}->execute([${4:':id' => $id}]);",
+            "$${5:result} = $${1:stmt}->fetchAll(PDO::FETCH_ASSOC);"
+        ],
+        "description": "PDO prepared statement (PHP 5.1+)"
+    },
+    "pdo-query": {
+        "prefix": "pdoq",
+        "body": [
+            "$${1:stmt} = $${2:pdo}->query(\"${3:SELECT * FROM table}\");",
+            "$${4:result} = $${1:stmt}->fetchAll(PDO::FETCH_ASSOC);"
+        ],
+        "description": "PDO query (PHP 5.1+)"
+    },
+    
+    "// === Database (MySQLi) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "MySQLi database operations"
+    },
+    "mysqli-connect": {
+        "prefix": "mysqli",
+        "body": [
+            "$${1:conn} = new mysqli(",
+            "\t\"${2:localhost}\",",
+            "\t\"${3:username}\",",
+            "\t\"${4:password}\",",
+            "\t\"${5:database}\"",
+            ");"
+        ],
+        "description": "MySQLi connection (PHP 5+)"
+    },
+    "mysqli-prepare": {
+        "prefix": "mysqlip",
+        "body": [
+            "$${1:stmt} = $${2:conn}->prepare(\"${3:SELECT * FROM table WHERE id = ?}\");",
+            "$${1:stmt}->bind_param(\"${4:i}\", $${5:id});",
+            "$${1:stmt}->execute();",
+            "$${6:result} = $${1:stmt}->get_result();"
+        ],
+        "description": "MySQLi prepared statement (PHP 5+)"
+    },
+    
+    "// === File Operations ===": {
+        "prefix": "",
+        "body": [],
+        "description": "File operations"
+    },
+    "file-get-contents": {
+        "prefix": "fgc",
+        "body": [
+            "$${1:content} = file_get_contents(\"${2:filename}\");"
+        ],
+        "description": "file_get_contents() (PHP 5+)"
+    },
+    "file-put-contents": {
+        "prefix": "fpc",
+        "body": [
+            "file_put_contents(\"${1:filename}\", $${2:content});"
+        ],
+        "description": "file_put_contents() (PHP 5+)"
+    },
+    "fopen": {
+        "prefix": "fopen",
+        "body": [
+            "$${1:file} = fopen(\"${2:filename}\", \"${3:r}\");",
+            "${4:// code}",
+            "fclose($${1:file});"
+        ],
+        "description": "fopen() with fclose() (PHP 5+)"
+    },
+    "file-exists": {
+        "prefix": "fexists",
+        "body": [
+            "if (file_exists(\"${1:filename}\")) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "file_exists() check (PHP 5+)"
+    },
+    "is-file": {
+        "prefix": "isfile",
+        "body": [
+            "if (is_file(\"${1:filename}\")) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_file() check (PHP 5+)"
+    },
+    "is-dir": {
+        "prefix": "isdir",
+        "body": [
+            "if (is_dir(\"${1:directory}\")) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_dir() check (PHP 5+)"
+    },
+    
+    "// === Array Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Array functions"
+    },
+    "array-map": {
+        "prefix": "amap",
+        "body": [
+            "$${1:result} = array_map(function($${2:item}) {",
+            "\treturn ${3:// transform};",
+            "}, $${4:array});"
+        ],
+        "description": "array_map() function (PHP 5+)"
+    },
+    "array-filter": {
+        "prefix": "afilter",
+        "body": [
+            "$${1:result} = array_filter($${2:array}, function($${3:item}) {",
+            "\treturn ${4:// condition};",
+            "});"
+        ],
+        "description": "array_filter() function (PHP 5+)"
+    },
+    "array-reduce": {
+        "prefix": "areduce",
+        "body": [
+            "$${1:result} = array_reduce($${2:array}, function($${3:carry}, $${4:item}) {",
+            "\treturn ${5:// reduce logic};",
+            "}, ${6:initial});"
+        ],
+        "description": "array_reduce() function (PHP 5+)"
+    },
+    "array-keys": {
+        "prefix": "akeys",
+        "body": [
+            "$${1:keys} = array_keys($${2:array});"
+        ],
+        "description": "array_keys() function (PHP 5+)"
+    },
+    "array-values": {
+        "prefix": "avalues",
+        "body": [
+            "$${1:values} = array_values($${2:array});"
+        ],
+        "description": "array_values() function (PHP 5+)"
+    },
+    "in-array": {
+        "prefix": "inarray",
+        "body": [
+            "if (in_array($${1:needle}, $${2:haystack})) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "in_array() check (PHP 5+)"
+    },
+    "array-search": {
+        "prefix": "asearch",
+        "body": [
+            "$${1:key} = array_search($${2:needle}, $${3:haystack});"
+        ],
+        "description": "array_search() function (PHP 5+)"
+    },
+    "array-merge": {
+        "prefix": "amerge",
+        "body": [
+            "$${1:result} = array_merge($${2:array1}, $${3:array2});"
+        ],
+        "description": "array_merge() function (PHP 5+)"
+    },
+    "array-slice": {
+        "prefix": "aslice",
+        "body": [
+            "$${1:result} = array_slice($${2:array}, ${3:offset}, ${4:length});"
+        ],
+        "description": "array_slice() function (PHP 5+)"
+    },
+    "array-count": {
+        "prefix": "acount",
+        "body": [
+            "$${1:count} = count($${2:array});"
+        ],
+        "description": "count() function (PHP 5+)"
+    },
+    
+    "// === String Functions ===": {
+        "prefix": "",
+        "body": [],
+        "description": "String functions"
+    },
+    "strlen": {
+        "prefix": "strlen",
+        "body": [
+            "$${1:length} = strlen($${2:string});"
+        ],
+        "description": "strlen() function (PHP 5+)"
+    },
+    "substr": {
+        "prefix": "substr",
+        "body": [
+            "$${1:result} = substr($${2:string}, ${3:start}, ${4:length});"
+        ],
+        "description": "substr() function (PHP 5+)"
+    },
+    "strpos": {
+        "prefix": "strpos",
+        "body": [
+            "$${1:position} = strpos($${2:haystack}, \"${3:needle}\");"
+        ],
+        "description": "strpos() function (PHP 5+)"
+    },
+    "str_replace": {
+        "prefix": "strrep",
+        "body": [
+            "$${1:result} = str_replace(\"${2:search}\", \"${3:replace}\", $${4:subject});"
+        ],
+        "description": "str_replace() function (PHP 5+)"
+    },
+    "trim": {
+        "prefix": "trim",
+        "body": [
+            "$${1:result} = trim($${2:string});"
+        ],
+        "description": "trim() function (PHP 5+)"
+    },
+    "explode": {
+        "prefix": "explode",
+        "body": [
+            "$${1:array} = explode(\"${2:separator}\", $${3:string});"
+        ],
+        "description": "explode() function (PHP 5+)"
+    },
+    "implode": {
+        "prefix": "implode",
+        "body": [
+            "$${1:string} = implode(\"${2:separator}\", $${3:array});"
+        ],
+        "description": "implode() function (PHP 5+)"
+    },
+    "strtolower": {
+        "prefix": "strlower",
+        "body": [
+            "$${1:result} = strtolower($${2:string});"
+        ],
+        "description": "strtolower() function (PHP 5+)"
+    },
+    "strtoupper": {
+        "prefix": "strupper",
+        "body": [
+            "$${1:result} = strtoupper($${2:string});"
+        ],
+        "description": "strtoupper() function (PHP 5+)"
+    },
+    "ucfirst": {
+        "prefix": "ucfirst",
+        "body": [
+            "$${1:result} = ucfirst($${2:string});"
+        ],
+        "description": "ucfirst() function (PHP 5+)"
+    },
+    "preg-match": {
+        "prefix": "preg",
+        "body": [
+            "if (preg_match(\"${1:/pattern/}\", $${2:string}, $${3:matches})) {",
+            "\t${4:// code}",
+            "}"
+        ],
+        "description": "preg_match() function (PHP 5+)"
+    },
+    "preg-replace": {
+        "prefix": "pregrep",
+        "body": [
+            "$${1:result} = preg_replace(\"${2:/pattern/}\", \"${3:replacement}\", $${4:string});"
+        ],
+        "description": "preg_replace() function (PHP 5+)"
+    },
+    
+    "// === JSON Operations ===": {
+        "prefix": "",
+        "body": [],
+        "description": "JSON operations"
+    },
+    "json-encode": {
+        "prefix": "jsonenc",
+        "body": [
+            "$${1:json} = json_encode($${2:data});"
+        ],
+        "description": "json_encode() function (PHP 5.2+)"
+    },
+    "json-decode": {
+        "prefix": "jsondec",
+        "body": [
+            "$${1:data} = json_decode($${2:json}, ${3:true});"
+        ],
+        "description": "json_decode() function (PHP 5.2+)"
+    },
+    
+    "// === Session Operations ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Session operations"
+    },
+    "session-start": {
+        "prefix": "sess",
+        "body": [
+            "session_start();"
+        ],
+        "description": "session_start() (PHP 5+)"
+    },
+    "session-set": {
+        "prefix": "sesset",
+        "body": [
+            "$_SESSION[\"${1:key}\"] = ${2:value};"
+        ],
+        "description": "Set session variable (PHP 5+)"
+    },
+    "session-get": {
+        "prefix": "sesget",
+        "body": [
+            "$${1:value} = $_SESSION[\"${2:key}\"] ?? ${3:default};"
+        ],
+        "description": "Get session variable (PHP 5+)"
+    },
+    "session-destroy": {
+        "prefix": "sesdestroy",
+        "body": [
+            "session_destroy();"
+        ],
+        "description": "session_destroy() (PHP 5+)"
+    },
+    
+    "// === Cookie Operations ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Cookie operations"
+    },
+    "setcookie": {
+        "prefix": "setcookie",
+        "body": [
+            "setcookie(\"${1:name}\", \"${2:value}\", ${3:time() + 3600});"
+        ],
+        "description": "setcookie() function (PHP 5+)"
+    },
+    
+    "// === HTTP Headers ===": {
+        "prefix": "",
+        "body": [],
+        "description": "HTTP headers"
+    },
+    "header": {
+        "prefix": "header",
+        "body": [
+            "header(\"${1:Content-Type: application/json}\");"
+        ],
+        "description": "header() function (PHP 5+)"
+    },
+    "header-location": {
+        "prefix": "headerloc",
+        "body": [
+            "header(\"Location: ${1:url}\");",
+            "exit;"
+        ],
+        "description": "header() redirect (PHP 5+)"
+    },
+    "http-response-code": {
+        "prefix": "httpcode",
+        "body": [
+            "http_response_code(${1:200});"
+        ],
+        "description": "http_response_code() (PHP 5.4+)"
+    },
+    
+    "// === Type Checking ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Type checking functions"
+    },
+    "is-array": {
+        "prefix": "isarray",
+        "body": [
+            "if (is_array($${1:variable})) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_array() check (PHP 5+)"
+    },
+    "is-string": {
+        "prefix": "isstring",
+        "body": [
+            "if (is_string($${1:variable})) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_string() check (PHP 5+)"
+    },
+    "is-int": {
+        "prefix": "isint",
+        "body": [
+            "if (is_int($${1:variable})) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_int() check (PHP 5+)"
+    },
+    "is-bool": {
+        "prefix": "isbool",
+        "body": [
+            "if (is_bool($${1:variable})) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_bool() check (PHP 5+)"
+    },
+    "is-null": {
+        "prefix": "isnull",
+        "body": [
+            "if (is_null($${1:variable})) {",
+            "\t${2:// code}",
+            "}"
+        ],
+        "description": "is_null() check (PHP 5+)"
+    },
+    "gettype": {
+        "prefix": "gettype",
+        "body": [
+            "$${1:type} = gettype($${2:variable});"
+        ],
+        "description": "gettype() function (PHP 5+)"
+    },
+    
+    "// === Generators (PHP 5.5+) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Generators"
+    },
+    "generator": {
+        "prefix": "generator",
+        "body": [
+            "function ${1:generatorName}(): Generator {",
+            "\tfor ($${2:i} = ${3:0}; $${2:i} < ${4:count}; $${2:i}++) {",
+            "\t\tyield $${2:i};",
+            "\t}",
+            "}"
+        ],
+        "description": "Generator function (PHP 5.5+)"
+    },
+    
+    "// === Anonymous Class (PHP 7.0+) ===": {
+        "prefix": "",
+        "body": [],
+        "description": "Anonymous classes"
+    },
+    "anonymous-class": {
+        "prefix": "anonclass",
+        "body": [
+            "$${1:object} = new class(${2:args}) {",
+            "\t${3:// properties and methods}",
+            "};"
+        ],
+        "description": "Anonymous class (PHP 7.0+)"
+    },
+    
+    "// === PHP 8.2 Features ===": {
+        "prefix": "",
+        "body": [],
+        "description": "PHP 8.2 features"
+    },
+    "readonly-class": {
+        "prefix": "readonlyclass",
+        "body": [
+            "readonly class ${1:ClassName} {",
+            "\tpublic function __construct(",
+            "\t\tpublic ${2:type} $${3:property1},",
+            "\t\tpublic ${4:type} $${5:property2}",
+            "\t) {}",
+            "}"
+        ],
+        "description": "Readonly class (PHP 8.2+)"
+    },
+    "readonly-property": {
+        "prefix": "readonly",
+        "body": [
+            "readonly ${1:public} ${2:type} $${3:propertyName};"
+        ],
+        "description": "Readonly property (PHP 8.1+)"
+    },
+    "type-null": {
+        "prefix": "nulltype",
+        "body": [
+            "null"
+        ],
+        "description": "null type (PHP 8.2+)"
+    },
+    "type-false": {
+        "prefix": "falsetype",
+        "body": [
+            "false"
+        ],
+        "description": "false type (PHP 8.2+)"
+    },
+    "type-true": {
+        "prefix": "truetype",
+        "body": [
+            "true"
+        ],
+        "description": "true type (PHP 8.2+)"
+    },
+    "trait-constant": {
+        "prefix": "traitconst",
+        "body": [
+            "trait ${1:TraitName} {",
+            "\tpublic const ${2:CONSTANT_NAME} = ${3:value};",
+            "\t${4:// methods}",
+            "}"
+        ],
+        "description": "Trait with constant (PHP 8.2+)"
+    },
+    "sensitive-parameter": {
+        "prefix": "sensitive",
+        "body": [
+            "#[\\SensitiveParameter]",
+            "function ${1:functionName}(string $${2:password}) {",
+            "\t${3:// code}",
+            "}"
+        ],
+        "description": "SensitiveParameter attribute (PHP 8.2+)"
+    },
+    "disjunctive-normal-form": {
+        "prefix": "dnf",
+        "body": [
+            "(${1:Type1}&${2:Type2})|${3:Type3}"
+        ],
+        "description": "DNF (Disjunctive Normal Form) type (PHP 8.2+)"
+    },
+    
+    "// === PHP 8.3 Features ===": {
+        "prefix": "",
+        "body": [],
+        "description": "PHP 8.3 features"
+    },
+    "typed-constant": {
+        "prefix": "tconst",
+        "body": [
+            "public const ${1:type} ${2:CONSTANT_NAME} = ${3:value};"
+        ],
+        "description": "Typed class constant (PHP 8.3+)"
+    },
+    "override-attribute": {
+        "prefix": "override",
+        "body": [
+            "#[\\Override]",
+            "public function ${1:methodName}(${2:parameters}): ${3:returnType} {",
+            "\t${4:// code}",
+            "}"
+        ],
+        "description": "Override attribute (PHP 8.3+)"
+    },
+    "dynamic-constant": {
+        "prefix": "dynconst",
+        "body": [
+            "$${1:constant} = ${2:ClassName}::$${3:constantName};"
+        ],
+        "description": "Dynamic class constant fetch (PHP 8.3+)"
+    },
+    "json-validate": {
+        "prefix": "jsonval",
+        "body": [
+            "if (json_validate($${1:json})) {",
+            "\t${2:// valid JSON}",
+            "}"
+        ],
+        "description": "json_validate() function (PHP 8.3+)"
+    },
+    "mb-str-pad": {
+        "prefix": "mbpad",
+        "body": [
+            "$${1:result} = mb_str_pad($${2:string}, ${3:length}, \"${4:pad_string}\", ${5:STR_PAD_RIGHT}, \"${6:encoding}\");"
+        ],
+        "description": "mb_str_pad() function (PHP 8.3+)"
+    },
+    "override-method": {
+        "prefix": "overridem",
+        "body": [
+            "#[\\Override]",
+            "${1:public} function ${2:methodName}(${3:parameters}): ${4:returnType} {",
+            "\t${5:// override implementation}",
+            "}"
+        ],
+        "description": "Method with Override attribute (PHP 8.3+)"
+    },
+    
+    "// === PHP 8.4 Features ===": {
+        "prefix": "",
+        "body": [],
+        "description": "PHP 8.4 features"
+    },
+    "property-hooks": {
+        "prefix": "phooks",
+        "body": [
+            "public ${1:type} $${2:propertyName} {",
+            "\tget() {",
+            "\t\treturn $this->${2:propertyName};",
+            "\t}",
+            "\tset(${1:type} $${3:value}) {",
+            "\t\t$this->${2:propertyName} = $${3:value};",
+            "\t}",
+            "}"
+        ],
+        "description": "Property hooks with get/set (PHP 8.4+)"
+    },
+    "property-hook-get": {
+        "prefix": "phookget",
+        "body": [
+            "public ${1:type} $${2:propertyName} {",
+            "\tget() {",
+            "\t\treturn ${3:// computed value};",
+            "\t}",
+            "}"
+        ],
+        "description": "Property hook with getter (PHP 8.4+)"
+    },
+    "property-hook-set": {
+        "prefix": "phookset",
+        "body": [
+            "public ${1:type} $${2:propertyName} {",
+            "\tset(${1:type} $${3:value}) {",
+            "\t\t${4:// validation or transformation}",
+            "\t\t$this->${2:propertyName} = $${3:value};",
+            "\t}",
+            "}"
+        ],
+        "description": "Property hook with setter (PHP 8.4+)"
+    },
+    "new-initializer": {
+        "prefix": "newinit",
+        "body": [
+            "new ${1:ClassName}(${2:args})"
+        ],
+        "description": "New initializer (PHP 8.4+)"
+    },
+    "implicit-nullable": {
+        "prefix": "implicitnull",
+        "body": [
+            "?${1:Type}"
+        ],
+        "description": "Implicit nullable type (PHP 8.4+)"
     }
 }
